@@ -8,8 +8,10 @@ const App = () => {
   return (
     <div>
       <Header />
-      {notes.map()}
-      <Note title={} content={}/>
+      {notes.map(note => {
+        return <Note title={note.title} content={note.content}/>
+      })}
+      
       <Footer />
     </div>
   )
