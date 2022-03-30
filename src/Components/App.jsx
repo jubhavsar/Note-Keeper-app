@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Note />
+      <Note title="Note Title" content="Note Title"/>
       <Footer />
     </div>
   )
