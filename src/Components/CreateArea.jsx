@@ -8,8 +8,16 @@ function CreateArea() {
   })
 
   function handleChange(event) {
-    const newValue = event.target.value;
+    const { name, value } = event.target;
+
+    setNote(prev =>{
+      return {
+        ...prev,
+        [name]: value
+      };
+    });
   }
+  
   return (
     <div>
       <form>
