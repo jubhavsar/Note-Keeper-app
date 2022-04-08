@@ -20,8 +20,9 @@ const App = () => {
     <div>
       <Header />
       <CreateArea  onAdd={addNote}/>
-      {notes.map(note => {
-        return <Note key={1} title={note.title} content={note.content}/>
+    {/* Take array and render seperate Note components for each item. */}
+      {notes.map(noteItem => {
+        return <Note key={1} title={noteItem.title} content={noteItem.content}/>
       })}
       
       <Footer />
