@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-function CreateArea() {
+function CreateArea(props) {
 
+  // Create a constant that keeps track of the title and content.
   const [note, setNote] = useState({
     title: "",
     content: ""
@@ -19,6 +20,7 @@ function CreateArea() {
   }
 
   function submitNote(event) {
+    props.onAdd(note);
     event.preventDefault();
 
   }
