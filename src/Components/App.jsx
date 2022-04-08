@@ -10,7 +10,12 @@ const App = () => {
 
   // Delete a note from an array
   function deleteNote(id) {
-    console.log("deleted was triggered");
+    setNotes(prevNotes => {
+    //Use the filter function to filter out the item that needs deletion.
+      return prevNotes.filter((noteItem, index) => {
+        return  index !== id;
+      });
+    });
   }
 
   // Add new note to an array.
@@ -24,10 +29,11 @@ const App = () => {
     <div>
       <Header />
       <CreateArea  onAdd={addNote}/>
-    {/* Take array and render seperate Note components for each item. */}
+    {/* Take array and render seperate Note components for each item. */} */}
       {notes.map(noteItem => {
         return <Note 
-        key={1} 
+        key={index}
+        id={index} 
         title={noteItem.title} 
         content={noteItem.content} 
         onDelete={deleteNote}/>
